@@ -1,0 +1,9 @@
+id,title,content
+1,Pengantar Kecerdasan Buatan,"Kecerdasan Buatan (AI) adalah simulasi proses kecerdasan manusia oleh mesin, terutama sistem komputer."
+2,Belajar Python untuk Data Science,"Python adalah bahasa pemrograman yang populer untuk analisis data dan sains data karena memiliki banyak pustaka pendukung seperti Pandas dan Scikit-Learn."
+3,Teknologi Temu Balik Informasi,"Temu Balik Informasi atau Information Retrieval adalah ilmu mencari informasi dalam dokumen, mencari dokumen itu sendiri, dan juga mencari metadata yang menggambarkan data, dan basis data teks, gambar atau suara."
+4,Sejarah Internet,"Internet bermula dari proyek ARPANET yang didanai oleh Departemen Pertahanan Amerika Serikat pada tahun 1960-an."
+5,Algoritma Machine Learning,"Machine Learning adalah cabang dari AI yang fokus pada penggunaan data dan algoritma untuk meniru cara manusia belajar, secara bertahap meningkatkan akurasinya."
+6,TF-IDF,"TF-IDF adalah metode yang digunakan untuk menghitung bobot kata dalam dokumen."
+7,Cosine Similarity,"Cosine Similarity adalah metode yang digunakan untuk menghitung kesamaan antara dua vektor."
+8,Streamlit,"Streamlit adalah framework yang digunakan untuk membuat aplikasi web."

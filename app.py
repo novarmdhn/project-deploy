@@ -37,50 +37,28 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 1. Dataset Dokumen (Corpus)
-# Ini adalah simulasi database dokumen. Dalam aplikasi nyata, ini bisa berasal dari file PDF, database SQL, dll.
-documents = [
-    {
-        "id": 1,
-        "title": "Pengantar Kecerdasan Buatan",
-        "content": "Kecerdasan Buatan (AI) adalah simulasi proses kecerdasan manusia oleh mesin, terutama sistem komputer."
-    },
-    {
-        "id": 2,
-        "title": "Belajar Python untuk Data Science",
-        "content": "Python adalah bahasa pemrograman yang populer untuk analisis data dan sains data karena memiliki banyak pustaka pendukung seperti Pandas dan Scikit-Learn."
-    },
-    {
-        "id": 3,
-        "title": "Teknologi Temu Balik Informasi",
-        "content": "Temu Balik Informasi atau Information Retrieval adalah ilmu mencari informasi dalam dokumen, mencari dokumen itu sendiri, dan juga mencari metadata yang menggambarkan data, dan basis data teks, gambar atau suara."
-    },
-    {
-        "id": 4,
-        "title": "Sejarah Internet",
-        "content": "Internet bermula dari proyek ARPANET yang didanai oleh Departemen Pertahanan Amerika Serikat pada tahun 1960-an."
-    },
-    {
-        "id": 5,
-        "title": "Algoritma Machine Learning",
-        "content": "Machine Learning adalah cabang dari AI yang fokus pada penggunaan data dan algoritma untuk meniru cara manusia belajar, secara bertahap meningkatkan akurasinya."
-    },
-    {
-        "id": 6,
-        "title": "TF-IDF",
-        "content": "TF-IDF adalah metode yang digunakan untuk menghitung bobot kata dalam dokumen."
-    },
-    {
-        "id": 7,
-        "title": "Cosine Similarity",
-        "content": "Cosine Similarity adalah metode yang digunakan untuk menghitung kesamaan antara dua vektor."
-    },
-    {
-        "id": 8,
-        "title": "Streamlit",
-        "content": "Streamlit adalah framework yang digunakan untuk membuat aplikasi web."
-    }
-]
+# 1. Dataset Dokumen (Corpus) - dari file CSV
+# Fungsi untuk load dokumen dari CSV dengan caching
+@st.cache_data
+def load_documents(csv_path="documents.csv"):
+    """
+    Membaca dokumen dari file CSV.
+    Format CSV harus memiliki kolom: id, title, content
+    """
+    try:
+        df = pd.read_csv(csv_path)
+        # Konversi dataframe ke list of dictionaries
+        documents = df.to_dict('records')
+        return documents
+    except FileNotFoundError:
+        st.error(f"File '{csv_path}' tidak ditemukan. Pastikan file CSV ada di direktori yang sama dengan app.py")
+        return []
+    except Exception as e:
+        st.error(f"Error membaca file CSV: {e}")
+        return []
+
+# Load dokumen dari CSV
+documents = load_documents()
 
 # Mengambil teks konten untuk di-index
 corpus = [doc['content'] for doc in documents]
