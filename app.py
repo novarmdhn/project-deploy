@@ -64,14 +64,21 @@ documents = [
         "id": 5,
         "title": "Algoritma Machine Learning",
         "content": "Machine Learning adalah cabang dari AI yang fokus pada penggunaan data dan algoritma untuk meniru cara manusia belajar, secara bertahap meningkatkan akurasinya."
-
+    },
+    {
         id: 6,
         title: "TF_IDF",
         content: "TF-IDF adalah metode yang digunakan untuk menghitung bobot kata dalam dokumen."
-
+    },
+    {
         id: 7,
         title: "Cosine Similarity",
         content: "Cosine Similarity adalah metode yang digunakan untuk menghitung kesamaan antara dua vektor."
+    },
+    {
+        id: 8,
+        title: "Streamlit",
+        content: "Streamlit adalah framework yang digunakan untuk membuat aplikasi web."
     }
 ]
 
