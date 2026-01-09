@@ -67,7 +67,7 @@ documents = [
     },
     {
         "id": 6,
-        "title": "TF_IDF",
+        "title": "TF-IDF",
         "content": "TF-IDF adalah metode yang digunakan untuk menghitung bobot kata dalam dokumen."
     },
     {
